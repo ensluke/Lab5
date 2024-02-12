@@ -1,0 +1,41 @@
+<!--
+=========================================================
+Name        : lab5_exe_D.html
+Assignment  : Lab 5, Exercise D
+Author(s)   : Ludo Berset, Luke Ens
+Submission  : Feb 12, 2024
+Description : Arrays and functions.
+=========================================================
+-->
+<!DOCTYPE html >
+<html lang =" en " >
+<head >
+    <meta charset =" UTF -8" >
+    <meta name =" viewport " content =" width = device-width , initial-scale =1.0" >
+    <title > JavaScript String and Variable Exercise </title >
+</head >
+<body >
+    <!-- JavaScript will be linked here -->
+    <script>
+        // Part 3
+        let firstName = "Luke";
+        let lastName = "Ens ";
+        let age = 21;
+        // Part 4
+        let fullName = firstName + " " + lastName;
+        console.log(fullName);  
+        // Part 5
+        let currentYear = new Date().getFullYear();
+        let birthYear = currentYear - age;
+        console.log(birthYear);   
+        // Part 6
+        console.log(fullName.length);
+        console.log(fullName.toUpperCase());
+        // Part 7
+        console.log( `Hello, my name is ${fullName} and I am ${age} years old. I was born in ${birthYear}. `);
+        // Part 8
+        let canVote = (age > 18);
+        console.log ( `I am eligible to vote: ${canVote} `);
+    </script>
+</body >
+</html >
