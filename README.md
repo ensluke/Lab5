@@ -1,7 +1,7 @@
 # Lab5
 
-| Names | UCID |
-| -- | -- |
+| Names  |
+| -- |
 | Ludo Berset  |
 | Luke Ens  |
 
