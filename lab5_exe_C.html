@@ -213,34 +213,83 @@ Description : DOM Elements.
 				}
 
 				// Task 2: Change the background color of the navigation bar
-				let navigationBar = document.getElementsByTagName('nav');
-				navigationBar[0].style.backgroundColor = "#33FF88";
+				let navigationBar = document.getElementsByTagName('nav')[0];
+				navigationBar.style.backgroundColor = "#33FF88";
 				
 
 				// Task 3: Hide the section titled 'What is full-stack?'
-				let unwantedTitle = document.getElementsByTagName('article.h2')
-				unwantedTitle[0].style.display = "hidden;"
-
+				let header2s = document.getElementsByTagName('h2')
+				for (const element of header2s) {
+					if (element.innerText == "What is full-stack?") {
+						element.style.display = "none";
+					}
+				}
 
 				// Task 4: Create a new <p> element and append it to the 'About Us' section
-
+				let newElement = document.createElement('p');
+				newElement.innerText = "This is a new paragraph";
+				newElement.style.color = "red";
+				let aboutUs;
+				for (const element of header2s) {
+					if (element.innerText == "About Us") {
+						aboutUs = element;
+					}
+				}
+				aboutUs.parentElement.appendChild(newElement);
 
 				// Task 5: Add placeholders to input elements based on their corresponding label IDs
-
+				let name = document.getElementById("name");
+				name.innerText = "Name";
+				name.value = "Name";
+				let email = document.getElementById("email");
+				email.value = "Email";
+				let message = document.getElementById("message");
+				message.value = "Message";
 
 				// Task 6: Set the src attribute of the image
-
+				let images = document.getElementsByTagName("img");
+				for (let i = 0; i < images.length; i++) {
+					images[i].src = "./images/example.svg";
+				}
 
 				// Task 7: Add a new item in the navigation menu
+				let newNav = document.createElement('li');
+				let blogLink = document.createElement('a');
+				blogLink.href = "#";
+				blogLink.innerText = "Blog";
+				newNav.appendChild(blogLink);
+				navigationBar.children[0].appendChild(newNav);
 
 
 				// Task 8: Change the submit button text upon clicking and make it disabled
+				let inputs = document.getElementsByTagName("input");
+				let submitButton;
+				for (let i = 0; i < inputs.length; i++) {
+					if (inputs[i].type == "button") submitButton = inputs[i];
+				}
+				submitButton.addEventListener('click', () => {
+					submitButton.value = "Submitted";
+					submitButton.disabled = true;
+				});
 
 
 				// Task 9: Change the text color of each item in the 'Related Links' to green
+				let header3s = document.getElementsByTagName('h3')
+				let relatedLinks;
+				for (const element of header3s) {
+					if (element.innerText == "Related Links") {
+						relatedLinks = element;
+					}
+				}
+				let links = relatedLinks.parentElement.children[1].children;
+				for (const link of links) {
+					link.children[0].style.color = "green";
+				}
 
 
 				// Task 10: Add a red solid border to the footer
+				let footer = document.getElementsByTagName('footer')[0];
+				footer.style.border = "2px solid red";
 			});
 		</script>
 	</body>
