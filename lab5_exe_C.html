@@ -214,10 +214,12 @@ Description : DOM Elements.
 
 				// Task 2: Change the background color of the navigation bar
 				let navigationBar = document.getElementsByTagName('nav');
-				navigationBar.style.backgroundColor = "none";
+				navigationBar[0].style.backgroundColor = "#33FF88";
 				
 
 				// Task 3: Hide the section titled 'What is full-stack?'
+				let unwantedTitle = document.getElementsByTagName('article.h2')
+				unwantedTitle[0].style.display = "hidden;"
 
 
 				// Task 4: Create a new <p> element and append it to the 'About Us' section
